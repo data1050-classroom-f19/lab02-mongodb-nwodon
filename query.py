@@ -155,10 +155,7 @@ def query5(latitude, longitude):
    result = [doc for doc in docs]
    return result
 
-
-
 if __name__ == "__main__":
-    #print(query1(20,123))
-    #print(query3())
+    print(query1(20,123))
+    print(query3())
     print(query4())
-    #print(query5())
