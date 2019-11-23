@@ -23,11 +23,12 @@ def query1(minFare, maxFare):
         An array of documents.
     """
     docs = db.taxi.find(
-        {"fare_amount": {"$gte": minFare, "$lte": maxFare}})
+        {"fare_amount": {"$gte": minFare, "$lte": maxFare}},
+        {"_id":0, "pickup_longitude":1, "pickup_latitude":1}
 
     result = [doc for doc in docs]
     return result
-
+    )
 
 def query2(textSearch, minReviews):
     """ Finds airbnbs with that match textSearch and have number of reviews
